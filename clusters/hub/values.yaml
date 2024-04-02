@@ -76,42 +76,42 @@ applications:
   #    namespace: reflector-operator
   #  source:
   #    path: clusters/hub/overlays/reflector-operator     
-  crossplane-operator:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '7'
-    destination:
-      namespace: crossplane-system
-    source:
-      path: clusters/hub/overlays/crossplane-operator
-    extraFields: |
-      ignoreDifferences:
-        - group: 'apps'
-          jsonPointers:
-            - /spec/template/spec/containers/0/env/0/valueFrom/resourceFieldRef/divisor
-            - /spec/template/spec/containers/0/env/1/valueFrom/resourceFieldRef/divisor
-            - /spec/template/spec/initContainers/0/env/0/valueFrom/resourceFieldRef/divisor
-            - /spec/template/spec/initContainers/0/env/1/valueFrom/resourceFieldRef/divisor            
-          kind: Deployment            
-
-  crossplane-providers:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15'
-    destination:
-      namespace: crossplane-system
-    source:
-      path: clusters/hub/overlays/crossplane-providers
-
-  crossplane-provider-config:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '25'
-    destination:
-      namespace: crossplane-system
-    source:
-      path: clusters/hub/overlays/crossplane-provider-config
-
+  #crossplane-operator:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '7'
+  #  destination:
+  #    namespace: crossplane-system
+  #  source:
+  #    path: clusters/hub/overlays/crossplane-operator
+  #  extraFields: |
+  #    ignoreDifferences:
+  #      - group: 'apps'
+  #        jsonPointers:
+  #          - /spec/template/spec/containers/0/env/0/valueFrom/resourceFieldRef/divisor
+  #          - /spec/template/spec/containers/0/env/1/valueFrom/resourceFieldRef/divisor
+  #          - /spec/template/spec/initContainers/0/env/0/valueFrom/resourceFieldRef/divisor
+  #          - /spec/template/spec/initContainers/0/env/1/valueFrom/resourceFieldRef/divisor            
+  #        kind: Deployment            
+#
+  #crossplane-providers:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '15'
+  #  destination:
+  #    namespace: crossplane-system
+  #  source:
+  #    path: clusters/hub/overlays/crossplane-providers
+#
+  #crossplane-provider-config:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '25'
+  #  destination:
+  #    namespace: crossplane-system
+  #  source:
+  #    path: clusters/hub/overlays/crossplane-provider-config
+#
   #crossplane-compositions:
   #  annotations:
   #    argocd.argoproj.io/compare-options: IgnoreExtraneous
@@ -121,23 +121,23 @@ applications:
   #  source:
   #    path: clusters/hub/overlays/crossplane-compositions 
 
-  crossplane-vault:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '6'
-    destination:
-      namespace: vault-admin
-    source:
-      path: clusters/hub/overlays/crossplane-vault            
-
-  group-sync-configuration:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15'
-    destination:
-      namespace: group-sync-configuration
-    source:
-      path: clusters/hub/overlays/group-sync-configuration       
+  #crossplane-vault:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '6'
+  #  destination:
+  #    namespace: vault-admin
+  #  source:
+  #    path: clusters/hub/overlays/crossplane-vault            
+#
+  #group-sync-configuration:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '15'
+  #  destination:
+  #    namespace: group-sync-configuration
+  #  source:
+  #    path: clusters/hub/overlays/group-sync-configuration       
 
   #tenant-gitops-instance:
   #  annotations:
