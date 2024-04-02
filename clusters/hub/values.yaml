@@ -68,14 +68,14 @@ applications:
   #    namespace: kube-ops-view
   #  source:
   #    path: clusters/hub/overlays/kube-ops-view  
-  #reflector-operator:
-  #  annotations:
-  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
-  #    argocd.argoproj.io/sync-wave: '5'
-  #  destination:
-  #    namespace: reflector-operator
-  #  source:
-  #    path: clusters/hub/overlays/reflector-operator     
+  reflector-operator:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '5'
+    destination:
+      namespace: reflector-operator
+    source:
+      path: clusters/hub/overlays/reflector-operator     
   #crossplane-operator:
   #  annotations:
   #    argocd.argoproj.io/compare-options: IgnoreExtraneous
