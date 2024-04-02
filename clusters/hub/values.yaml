@@ -60,14 +60,14 @@ applications:
     source:
       path: clusters/hub/overlays/vault-config                      
 
-  #kube-ops-view:
-  #  annotations:
-  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
-  #    argocd.argoproj.io/sync-wave: '15'
-  #  destination:
-  #    namespace: kube-ops-view
-  #  source:
-  #    path: clusters/hub/overlays/kube-ops-view  
+  kube-ops-view:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '15'
+    destination:
+      namespace: kube-ops-view
+    source:
+      path: clusters/hub/overlays/kube-ops-view  
   reflector-operator:
     annotations:
       argocd.argoproj.io/compare-options: IgnoreExtraneous
