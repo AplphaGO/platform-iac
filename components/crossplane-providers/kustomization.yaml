@@ -7,7 +7,7 @@ resources:
 - ./controller-config.yaml
 - ./store-config.yaml
 - ./vault-config.yaml
-- ./aws-rds-provider.yaml
+#- ./aws-rds-provider.yaml
 - ./kubernetes-provider.yaml
 - ./tenant-rbac.yaml
    
