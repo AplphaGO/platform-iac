@@ -9,5 +9,5 @@ resources:
   - link.yaml
   - users.yaml
   - groups.yaml
-  - oauth-secret-policy.yaml
+  #- oauth-secret-policy.yaml
   - rbac.yaml
