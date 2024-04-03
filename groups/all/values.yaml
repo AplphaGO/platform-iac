@@ -19,38 +19,38 @@ projects:
 
 applications:
 
-  namespace-configuration-operator:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: namespace-configuration-operator
-    source:
-      path: components/namespace-configuration-operator
-
-  vault-config-operator:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: vault-config-operator
-    source:
-      path: components/vault-config-operator
-
-  patch-operator:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: patch-operator
-    source:
-      path: components/patch-operator
-
-  group-sync-operator:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: group-sync-operator
-    source:
-      path: components/group-sync-operator                     
+  #namespace-configuration-operator:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '5'
+  #  destination:
+  #    namespace: namespace-configuration-operator
+  #  source:
+  #    path: components/namespace-configuration-operator
+#
+  #vault-config-operator:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '5'
+  #  destination:
+  #    namespace: vault-config-operator
+  #  source:
+  #    path: components/vault-config-operator
+#
+  #patch-operator:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '5'
+  #  destination:
+  #    namespace: patch-operator
+  #  source:
+  #    path: components/patch-operator
+#
+  #group-sync-operator:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '5'
+  #  destination:
+  #    namespace: group-sync-operator
+  #  source:
+  #    path: components/group-sync-operator                     

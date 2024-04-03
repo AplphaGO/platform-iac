@@ -18,65 +18,65 @@ applications:
   #  source:
   #    path: clusters/hub/overlays/acm-configuration
 
-  rhsso-operator:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: sso
-    source:
-      path: clusters/hub/overlays/rhsso-operator
-
-  rhsso-configuration:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15'
-    destination:
-      namespace: sso
-    source:
-      path: clusters/hub/overlays/rhsso-configuration
-
-  vault:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: vault
-    source:
-      path: clusters/hub/overlays/vault
-    extraFields: |
-      ignoreDifferences:
-        - group: 'apps'
-          jsonPointers:
-            - /spec/volumeClaimTemplates
-          kind: StatefulSet
-
-  vault-config:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '6'
-    destination:
-      namespace: vault-admin
-    source:
-      path: clusters/hub/overlays/vault-config                      
-
-  kube-ops-view:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15'
-    destination:
-      namespace: kube-ops-view
-    source:
-      path: clusters/hub/overlays/kube-ops-view  
-      
-  reflector-operator:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '5'
-    destination:
-      namespace: reflector-operator
-    source:
-      path: clusters/hub/overlays/reflector-operator
+  #rhsso-operator:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '5'
+  #  destination:
+  #    namespace: sso
+  #  source:
+  #    path: clusters/hub/overlays/rhsso-operator
+#
+  #rhsso-configuration:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '15'
+  #  destination:
+  #    namespace: sso
+  #  source:
+  #    path: clusters/hub/overlays/rhsso-configuration
+#
+  #vault:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '5'
+  #  destination:
+  #    namespace: vault
+  #  source:
+  #    path: clusters/hub/overlays/vault
+  #  extraFields: |
+  #    ignoreDifferences:
+  #      - group: 'apps'
+  #        jsonPointers:
+  #          - /spec/volumeClaimTemplates
+  #        kind: StatefulSet
+#
+  #vault-config:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '6'
+  #  destination:
+  #    namespace: vault-admin
+  #  source:
+  #    path: clusters/hub/overlays/vault-config                      
+#
+  #kube-ops-view:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '15'
+  #  destination:
+  #    namespace: kube-ops-view
+  #  source:
+  #    path: clusters/hub/overlays/kube-ops-view  
+  #    
+  #reflector-operator:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '5'
+  #  destination:
+  #    namespace: reflector-operator
+  #  source:
+  #    path: clusters/hub/overlays/reflector-operator
 
   #crossplane-operator:
   #  annotations:
@@ -132,14 +132,14 @@ applications:
   #  source:
   #    path: clusters/hub/overlays/crossplane-vault
 
-  group-sync-configuration:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15'
-    destination:
-      namespace: group-sync-configuration
-    source:
-      path: clusters/hub/overlays/group-sync-configuration       
+  #group-sync-configuration:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '15'
+  #  destination:
+  #    namespace: group-sync-configuration
+  #  source:
+  #    path: clusters/hub/overlays/group-sync-configuration       
       
   #tenant-gitops-instance:
   #  annotations:
