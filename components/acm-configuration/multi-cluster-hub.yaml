@@ -6,3 +6,9 @@ metadata:
   namespace: open-cluster-management
 spec:
   availabilityConfig: "Basic"
+  overrides:
+    components:
+      - enabled: false
+        name: insights
+      - enabled: false
+        name: cluster-backup
