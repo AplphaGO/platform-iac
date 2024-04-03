@@ -1,7 +1,6 @@
-
-#registryCaBundleConfig:
-#     name: kube-root-ca.crt
-#      key: ca.crt
+registryCaBundleConfig:
+     name: ca-bundle-config
+     key: ca-bundle
 
 
 args:
