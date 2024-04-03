@@ -8,14 +8,16 @@ applications:
       namespace: open-cluster-management
     source:
       path: clusters/hub/overlays/acm-operator
-  acm-configuration:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15'
-    destination:
-      namespace: open-cluster-management
-    source:
-      path: clusters/hub/overlays/acm-configuration
+
+  #acm-configuration:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '15'
+  #  destination:
+  #    namespace: open-cluster-management
+  #  source:
+  #    path: clusters/hub/overlays/acm-configuration
+
   rhsso-operator:
     annotations:
       argocd.argoproj.io/compare-options: IgnoreExtraneous
@@ -74,7 +76,8 @@ applications:
     destination:
       namespace: reflector-operator
     source:
-      path: clusters/hub/overlays/reflector-operator 
+      path: clusters/hub/overlays/reflector-operator
+
   crossplane-operator:
     annotations:
       argocd.argoproj.io/compare-options: IgnoreExtraneous
@@ -93,39 +96,42 @@ applications:
             - /spec/template/spec/initContainers/0/env/1/valueFrom/resourceFieldRef/divisor            
           kind: Deployment            
 
-  crossplane-providers:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15'
-    destination:
-      namespace: crossplane-system
-    source:
-      path: clusters/hub/overlays/crossplane-providers
+  #crossplane-providers:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '15'
+  #  destination:
+  #    namespace: crossplane-system
+  #  source:
+  #    path: clusters/hub/overlays/crossplane-providers
+#
+  #crossplane-provider-config:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '25'
+  #  destination:
+  #    namespace: crossplane-system
+  #  source:
+  #    path: clusters/hub/overlays/crossplane-provider-config
 
-  crossplane-provider-config:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '25'
-    destination:
-      namespace: crossplane-system
-    source:
-      path: clusters/hub/overlays/crossplane-provider-config
-  crossplane-compositions:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '25'
-    destination:
-      namespace: crossplane-system
-    source:
-      path: clusters/hub/overlays/crossplane-compositions 
-  crossplane-vault:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '6'
-    destination:
-      namespace: vault-admin
-    source:
-      path: clusters/hub/overlays/crossplane-vault            
+  #crossplane-compositions:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '25'
+  #  destination:
+  #    namespace: crossplane-system
+  #  source:
+  #    path: clusters/hub/overlays/crossplane-compositions 
+  
+  #crossplane-vault:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '6'
+  #  destination:
+  #    namespace: vault-admin
+  #  source:
+  #    path: clusters/hub/overlays/crossplane-vault
+
   group-sync-configuration:
     annotations:
       argocd.argoproj.io/compare-options: IgnoreExtraneous
