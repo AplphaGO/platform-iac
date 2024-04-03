@@ -1,3 +1,9 @@
+
+registryCaBundleConfig:
+      name: kube-root-ca.crt
+      key: ca.crt
+
+
 args:
   - "-d"
   - --enable-external-secret-stores  
