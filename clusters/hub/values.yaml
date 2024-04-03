@@ -68,6 +68,7 @@ applications:
       namespace: kube-ops-view
     source:
       path: clusters/hub/overlays/kube-ops-view  
+      
   reflector-operator:
     annotations:
       argocd.argoproj.io/compare-options: IgnoreExtraneous
@@ -75,7 +76,8 @@ applications:
     destination:
       namespace: reflector-operator
     source:
-      path: clusters/hub/overlays/reflector-operator     
+      path: clusters/hub/overlays/reflector-operator 
+
   crossplane-operator:
     annotations:
       argocd.argoproj.io/compare-options: IgnoreExtraneous
