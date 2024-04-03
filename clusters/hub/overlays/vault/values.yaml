@@ -31,9 +31,6 @@ server:
   extraEnvironmentVars:
     #VAULT_CACERT: /var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt
     VAULT_LOG_LEVEL: debug
-    #PROXY
-    HTTP_PROXY: http://192.168.88.1:3128
-    HTTPS_PROXY: http://192.168.88.1:3128
 
 
   route:
@@ -93,6 +90,8 @@ server:
       - -c
       - | 
           cd /usr/local/libexec/vault
+          export HTTP_PROXY=http://192.168.88.1:3128
+          export HTTPS_PROXY=http://192.168.88.1:3128
           curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
           chmod +x kubectl
           curl -L -o jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
