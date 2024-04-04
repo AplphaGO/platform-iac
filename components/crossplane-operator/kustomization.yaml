@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: crossplane-system
 resources: 
 - ./namespace.yaml
-- ./cm-selft-ca.yaml
+#- ./cm-selft-ca.yaml
 - ./rbac.yaml
 
 helmGlobals:
