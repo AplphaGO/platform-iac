@@ -1,4 +1,4 @@
-apiVersion: user.keycloak.crossplane.io/v1alpha1
+apiVersion: group.keycloak.crossplane.io/v1alpha1
 kind: Group
 metadata:
   name: team-a
@@ -10,7 +10,7 @@ spec:
     attributes: 
       devteam: "true"
 ---    
-apiVersion: user.keycloak.crossplane.io/v1alpha1
+apiVersion: group.keycloak.crossplane.io/v1alpha1
 kind: Group
 metadata:
   name: team-b
@@ -22,7 +22,7 @@ spec:
     attributes: 
       devteam: "true"    
 ---
-apiVersion: user.keycloak.crossplane.io/v1alpha1
+apiVersion: group.keycloak.crossplane.io/v1alpha1
 kind: Group
 metadata:
   name: admin
