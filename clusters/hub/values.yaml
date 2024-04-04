@@ -96,15 +96,15 @@ applications:
             - /spec/template/spec/initContainers/0/env/1/valueFrom/resourceFieldRef/divisor            
           kind: Deployment            
 
-  crossplane-providers:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15'
-    destination:
-      namespace: crossplane-system
-    source:
-      path: clusters/hub/overlays/crossplane-providers
-
+  #crossplane-providers:
+  #  annotations:
+  #    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #    argocd.argoproj.io/sync-wave: '15'
+  #  destination:
+  #    namespace: crossplane-system
+  #  source:
+  #    path: clusters/hub/overlays/crossplane-providers
+#
   #crossplane-provider-config:
   #  annotations:
   #    argocd.argoproj.io/compare-options: IgnoreExtraneous
@@ -113,7 +113,7 @@ applications:
   #    namespace: crossplane-system
   #  source:
   #    path: clusters/hub/overlays/crossplane-provider-config
-
+#
   #crossplane-compositions:
   #  annotations:
   #    argocd.argoproj.io/compare-options: IgnoreExtraneous
