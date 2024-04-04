@@ -8,6 +8,6 @@ resources:
   - keycloak-realm.yaml
   - link.yaml
   - users.yaml
-  - groups.yaml
+  #- groups.yaml
   #- oauth-secret-policy.yaml
   - rbac.yaml
