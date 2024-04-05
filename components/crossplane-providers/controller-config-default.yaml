@@ -1,0 +1,20 @@
+apiVersion: pkg.crossplane.io/v1alpha1
+kind: ControllerConfig
+metadata:
+  name: default-config
+spec:
+  args:
+    - -d
+  volumeMounts:
+  - name: ca-bundle
+    readOnly: true
+    mountPath: /etc/ssl/certs
+  volumes:
+    - name: ca-bundle
+      secret:
+        secretName: ca-bundle
+        items:
+          - key: ca-bundle
+            path: ca-bundle.pem
+        defaultMode: 420
+  
