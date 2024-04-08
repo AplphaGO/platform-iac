@@ -4,5 +4,6 @@ kind: Kustomization
 namespace: crossplane-system
 resources: 
  - ./role.yaml
+ - ./oidc.yaml
 #- ./aws-rds-postgresql-definition.yaml
 #- ./aws-rds-postgresql-xrd.yaml   

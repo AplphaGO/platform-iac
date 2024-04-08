@@ -1,0 +1,13 @@
+apiVersion: iam.aws.upbound.io/v1beta1
+kind: OpenIDConnectProvider
+metadata:
+  annotations:
+    meta.upbound.io/example-id: iam/v1beta1/openidconnectprovider
+  name: example
+spec:
+  forProvider:
+    clientIdList:
+      - some-audience
+    thumbprintList:
+      - 9e99a48a9960b14926bb7f3b02e22da2b0ab7280
+    url: https://oidc.op1.openshiftapps.com/2ag434nind6c19tid004jo232ehle0qb
