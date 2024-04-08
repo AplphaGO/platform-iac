@@ -5,7 +5,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "4"
   labels:
     crossplane/vpc: {{ .Values.cluster_name }}
-  name: {{ .Values.cluster_name }}-VPC
+  name: {{ .Values.cluster_name }}-vpc
 spec:
   forProvider:
     cidrBlock: {{ .Values.vpc_cidrBlock }}
