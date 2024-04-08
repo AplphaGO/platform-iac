@@ -16,7 +16,8 @@ spec:
       rosa_role_type: instance_worker 
       rosa_managed_policies: "true" 
       rosa_openshift_version: "{{ .Values.rosa_openshift_version }}" 
-      rosa_role_prefix: ManagedOpenShift
+      #rosa_role_prefix: ManagedOpenShift
+      rosa_role_prefix: managedopenshift
     assumeRolePolicy: |
       {
         "Version": "2012-10-17",
