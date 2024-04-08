@@ -10,7 +10,7 @@ spec:
   forProvider:
     availabilityZone: us-west-1a
     cidrBlock: 10.0.6.0/24
-    region: us-west-1
+    region: us-east-1a
     vpcIdSelector:
       matchLabels:
         testing.upbound.io/example-name: example
