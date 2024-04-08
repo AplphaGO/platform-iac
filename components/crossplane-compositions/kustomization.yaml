@@ -1,9 +1,24 @@
 ---
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: crossplane-system
-resources: 
-  - ./empty.yaml
+
+#resources: 
+#  - ./oidc.yaml
+
+helmGlobals:
+  chartHome: ./
+
+helmCharts:
+- name: cluster-role
+  valuesFile: values.yaml
+
+patches: [] 
+
+#apiVersion: kustomize.config.k8s.io/v1beta1
+#kind: Kustomization
+#namespace: crossplane-system
+#resources: 
+#  - ./empty.yaml
  #- ./role.yaml
  #- ./oidc.yaml
  #- ./vpc.yaml

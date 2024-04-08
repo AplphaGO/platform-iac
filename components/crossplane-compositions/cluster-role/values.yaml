@@ -1,0 +1,67 @@
+roles:
+  controller-manager:
+     role_name: crossplane-kube-system-capi-controller-manager
+     managedPolicyArns: arn:aws:iam::aws:policy/service-role/ROSANodePoolManagementPolicy
+     operator_name: capi-controller-manager
+     operator_namespace: kube-system  
+  
+  control-plane-operator:
+     role_name: crossplane-kube-system-control-plane-operator
+     managedPolicyArns: arn:aws:iam::aws:policy/service-role/ROSAControlPlaneOperatorPolicy
+     operator_name: control-plane-operator
+     operator_namespace: kube-system
+  
+  kms-provider:
+     role_name: crossplane-kube-system-kms-provider
+     managedPolicyArns: arn:aws:iam::aws:policy/service-role/ROSAKMSProviderPolicy
+     operator_name: kms-provider
+     operator_namespace: kube-system
+
+  ebs-cloud-credentials:
+     role_name: crossplane-openshift-cluster-csi-drivers-ebs-cloud-credentials
+     managedPolicyArns: arn:aws:iam::aws:policy/service-role/ROSAAmazonEBSCSIDriverOperatorPolicy
+     operator_name: ebs-cloud-credentials
+     operator_namespace: openshift-cluster-csi-drivers
+
+  cloud-network-config-controller:
+     role_name: crossplane-openshift-cloud-network-config-controller-cloud-crede
+     managedPolicyArns: arn:aws:iam::aws:policy/service-role/ROSACloudNetworkConfigOperatorPolicy
+     operator_name: cloud-credentials
+     operator_namespace: openshift-cloud-network-config-controller
+
+  installer-cloud-credentials:
+     role_name: crossplane-openshift-image-registry-installer-cloud-credentials
+     managedPolicyArns: arn:aws:iam::aws:policy/service-role/ROSAImageRegistryOperatorPolicy
+     operator_name: installer-cloud-credentials
+     operator_namespace: openshift-image-registry
+
+  openshift-ingress-operator:
+     role_name: crossplane-openshift-ingress-operator-cloud-credentials
+     managedPolicyArns: arn:aws:iam::aws:policy/service-role/ROSAIngressOperatorPolicy
+     operator_name: cloud-credentials
+     operator_namespace: openshift-ingress-operator
+  
+  kube-controller-manager:
+     role_name: crossplane-kube-system-kube-controller-manager
+     managedPolicyArns: arn:aws:iam::aws:policy/service-role/ROSAKubeControllerPolicy
+     operator_name: kube-controller-manager
+     operator_namespace: kube-system
+
+
+#cluster_name: capi
+#
+#oidc_path: 2ag434nind6c19tid004jo232ehle0qb
+#redhat_aws_account_id: 3333333333           
+#
+#roles:
+#    AAA:
+#        role_name: crossplane-kube-system-control-plane-operator
+#        operator_name: abcd
+#        rosa_role_type: controller
+#        managedPolicyArns: 1111111111
+#  
+#    BBB:
+#        role_name: crossplane-kube-system-${CLUSTER_NAME}-control-plane-operator
+#        operator_name: cdef
+#        rosa_role_type: worker
+#        managedPolicyArns: 00000000000000
