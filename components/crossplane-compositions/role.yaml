@@ -11,8 +11,8 @@ spec:
     managedPolicyArns:
        - arn:aws:iam::aws:policy/service-role/ROSAInstallerPolicy
     tags:
-      red-hat-managed: true
-      rosa_hcp_policies: true
+      red-hat-managed: "true"
+      rosa_hcp_policies: "true"
     assumeRolePolicy: |
       {
         "Version": "2012-10-17",
