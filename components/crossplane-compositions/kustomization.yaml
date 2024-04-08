@@ -5,5 +5,7 @@ namespace: crossplane-system
 resources: 
  - ./role.yaml
  - ./oidc.yaml
+ - ./vpc.yaml
+ - ./private-subnet.yaml
 #- ./aws-rds-postgresql-definition.yaml
 #- ./aws-rds-postgresql-xrd.yaml   

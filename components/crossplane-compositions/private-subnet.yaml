@@ -1,0 +1,16 @@
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: Subnet
+metadata:
+  annotations:
+    meta.upbound.io/example-id: ec2/v1beta1/natgateway
+  labels:
+    testing.upbound.io/example-name: example
+  name: sample-subnet1
+spec:
+  forProvider:
+    availabilityZone: us-west-1a
+    cidrBlock: 10.6.0.0/24
+    region: us-west-1
+    vpcIdSelector:
+      matchLabels:
+        testing.upbound.io/example-name: example
