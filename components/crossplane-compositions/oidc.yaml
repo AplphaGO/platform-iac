@@ -6,8 +6,11 @@ metadata:
   name: example
 spec:
   forProvider:
+    tags:
+      red-hat-managed: "true"
     clientIdList:
-      - some-audience
+      - openshift
+      - sts.amazonaws.com
     thumbprintList:
       - 9e99a48a9960b14926bb7f3b02e22da2b0ab7280
     url: https://oidc.op1.openshiftapps.com/2ag434nind6c19tid004jo232ehle0qb
