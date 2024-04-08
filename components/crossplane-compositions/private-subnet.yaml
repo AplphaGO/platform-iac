@@ -9,7 +9,7 @@ metadata:
 spec:
   forProvider:
     availabilityZone: us-west-1a
-    cidrBlock: 10.6.0.0/24
+    cidrBlock: 10.0.6.0/24
     region: us-west-1
     vpcIdSelector:
       matchLabels:
