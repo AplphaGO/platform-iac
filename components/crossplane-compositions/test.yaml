@@ -2,8 +2,9 @@ apiVersion: iam.aws.upbound.io/v1beta1
 kind: Role
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "5"
+    argocd.argoproj.io/sync-wave: "2"
   name: ManagedOpenShift-HCP-ROSA-Installer-Role
+  namespace: rosa-hcp-1
 spec:
   forProvider:
     assumeRolePolicy: |
@@ -29,7 +30,7 @@ spec:
       red-hat-managed: "true"
       rosa_hcp_policies: "true"
       rosa_managed_policies: "true"
-      rosa_openshift_version: 4.15
+      rosa_openshift_version: "4.15"
       rosa_role_prefix: ManagedOpenShift
       rosa_role_type: installer
 ---
@@ -37,8 +38,9 @@ apiVersion: iam.aws.upbound.io/v1beta1
 kind: Role
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "5"
+    argocd.argoproj.io/sync-wave: "2"
   name: ManagedOpenShift-HCP-ROSA-Support-Role
+  namespace: rosa-hcp-1
 spec:
   forProvider:
     assumeRolePolicy: |
@@ -64,7 +66,7 @@ spec:
       red-hat-managed: "true"
       rosa_hcp_policies: "true"
       rosa_managed_policies: "true"
-      rosa_openshift_version: 4.15
+      rosa_openshift_version: "4.15"
       rosa_role_prefix: ManagedOpenShift
       rosa_role_type: support
 ---
@@ -72,43 +74,9 @@ apiVersion: iam.aws.upbound.io/v1beta1
 kind: Role
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "5"
-  name: ManagedOpenShift-HCP-ROSA-Worker-Role
-spec:
-  forProvider:
-    assumeRolePolicy: |
-      {
-        "Version": "2012-10-17",
-        "Statement": [
-          {
-            "Action": [
-              "sts:AssumeRole"
-            ],
-            "Effect": "Allow",
-            "Principal": {
-              "Service": [
-                "ec2.amazonaws.com"
-              ]
-            }
-          }
-        ]
-      }
-    managedPolicyArns:
-    - arn:aws:iam::aws:policy/service-role/ROSAWorkerInstancePolicy
-    tags:
-      red-hat-managed: "true"
-      rosa_hcp_policies: "true"
-      rosa_managed_policies: "true"
-      rosa_openshift_version: 4.15
-      rosa_role_prefix: ManagedOpenShift
-      rosa_role_type: instance_worker
----
-apiVersion: iam.aws.upbound.io/v1beta1
-kind: Role
-metadata:
-  annotations:
     argocd.argoproj.io/sync-wave: "6"
   name: crossplane-kube-system-capi-controller-manager
+  namespace: rosa-hcp-1
 spec:
   forProvider:
     assumeRolePolicy: |
@@ -148,6 +116,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "6"
   name: crossplane-kube-system-control-plane-operator
+  namespace: rosa-hcp-1
 spec:
   forProvider:
     assumeRolePolicy: |
@@ -187,6 +156,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "6"
   name: crossplane-kube-system-kms-provider
+  namespace: rosa-hcp-1
 spec:
   forProvider:
     assumeRolePolicy: |
@@ -226,6 +196,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "6"
   name: crossplane-kube-system-kube-controller-manager
+  namespace: rosa-hcp-1
 spec:
   forProvider:
     assumeRolePolicy: |
@@ -265,6 +236,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "6"
   name: crossplane-openshift-cloud-network-config-controller-cloud-crede
+  namespace: rosa-hcp-1
 spec:
   forProvider:
     assumeRolePolicy: |
@@ -304,6 +276,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "6"
   name: crossplane-openshift-cluster-csi-drivers-ebs-cloud-credentials
+  namespace: rosa-hcp-1
 spec:
   forProvider:
     assumeRolePolicy: |
@@ -343,6 +316,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "6"
   name: crossplane-openshift-image-registry-installer-cloud-credentials
+  namespace: rosa-hcp-1
 spec:
   forProvider:
     assumeRolePolicy: |
@@ -382,6 +356,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "6"
   name: crossplane-openshift-ingress-operator-cloud-credentials
+  namespace: rosa-hcp-1
 spec:
   forProvider:
     assumeRolePolicy: |
@@ -423,6 +398,7 @@ metadata:
   labels:
     crossplane/subnet: capi-private-subnet
   name: capi-private-subnet
+  namespace: rosa-hcp-1
 spec:
   forProvider:
     availabilityZone: us-east-1a
@@ -439,7 +415,8 @@ metadata:
     argocd.argoproj.io/sync-wave: "4"
   labels:
     crossplane/vpc: capi
-  name: capi-VPC
+  name: capi-vpc
+  namespace: rosa-hcp-1
 spec:
   forProvider:
     cidrBlock: 10.0.0.0/16
@@ -453,6 +430,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "3"
   name: example
+  namespace: rosa-hcp-1
 spec:
   forProvider:
     clientIdList:
