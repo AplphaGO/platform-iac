@@ -5,5 +5,5 @@ metadata:
 spec:
   #package: xpkg.upbound.io/crossplane-contrib/provider-keycloak:v0.1.0
   package: xpkg.upbound.io/crossplane-contrib/provider-keycloak:v0.12.0
-  #controllerConfigRef:
-  #  name: default-config 
+  controllerConfigRef:
+    name: default-config 
