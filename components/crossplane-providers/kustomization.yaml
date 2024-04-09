@@ -4,12 +4,12 @@ kind: Kustomization
 namespace: crossplane-system
 resources: 
 #- ./controller-config-default.yaml
-#- ./keycloak-provider.yaml
+- ./keycloak-provider.yaml
 - ./controller-config.yaml
 - ./store-config.yaml
 - ./vault-config.yaml
 #- ./aws-rds-provider.yaml
-#- ./aws-provider.yaml
+- ./aws-provider.yaml
 - ./kubernetes-provider.yaml
 - ./tenant-rbac.yaml
    
