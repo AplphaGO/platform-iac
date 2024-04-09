@@ -368,16 +368,16 @@ spec:
           - name: KUSTOMIZE_PLUGIN_HOME
             value: /etc/kustomize/plugin
           - name: CLUSTER_NAME
-            value: '${cluster_name}'
+            value: 'hub'
           - name: CLUSTER_BASE_DOMAIN
-            value: '${cluster_base_domain}'
+            value: 'test.lab.local'
           # all created clusters base domain should be <cluster-name>.<PLATFORM_BASE_DOMAIN> 
           - name: PLATFORM_BASE_DOMAIN
-            value: '${platform_base_domain}'
+            value: 'lab.local'
           - name: HUB_BASE_DOMAIN
-            value: '${cluster_base_domain}'
+            value: 'test.lab.local'
           - name: INFRA_GITOPS_REPO
-            value: '${gitops_repo}'                                    
+            value: 'https://github.com/AplphaGO/platform-iac.git'                                    
         # image: quay.io/gnunn/tools:latest
         image: quay.io/raffaelespazzoli/raffa-envsub:latest
         imagePullPolicy: Always
