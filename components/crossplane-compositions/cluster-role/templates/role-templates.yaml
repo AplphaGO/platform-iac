@@ -30,7 +30,7 @@ spec:
             "Effect": "Allow",
             "Condition": {
               "StringEquals": {
-                "oidc.op1.openshiftapps.com/{{ $oidcPath }}/sub": [
+                "oidc.op1.openshiftapps.com/{{ $oidcPath }}:sub": [
                   "system:serviceaccount:kube-system:{{ $val.operator_name }}"
                 ]
               }
