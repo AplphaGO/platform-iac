@@ -36,7 +36,7 @@ spec:
               }
             },
             "Principal": {
-              "Federated": "arn:aws:iam::{{ $redhatAwsAccountId }}/oidc-provider/oidc.op1.openshiftapps.com/{{ $oidcPath }}"
+              "Federated": "arn:aws:iam::{{ $redhatAwsAccountId }}:oidc-provider/oidc.op1.openshiftapps.com/{{ $oidcPath }}"
             }
           }
         ]

@@ -11,6 +11,7 @@ helmGlobals:
 helmCharts:
 - name: cluster-role
   valuesFile: values.yaml
+  namespace: rosa-hcp-1
 
 patches: [] 
 
