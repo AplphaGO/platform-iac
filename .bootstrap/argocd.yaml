@@ -419,9 +419,9 @@ spec:
       - TaskRun
       - PipelineRun
     - apiGroups:
-        - "*"
-        kinds:
-        - ProviderConfigUsage   
+      - "*"
+      kinds:
+      - ProviderConfigUsage   
   sso:
     dex:
       resources:

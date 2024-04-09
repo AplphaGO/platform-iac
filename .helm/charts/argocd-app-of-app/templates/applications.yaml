@@ -15,11 +15,12 @@ metadata:
 {{- end }}
 {{- end }}
 
-#{{- if or $val.finalizers }}
-#  finalizers:
-#    {{ range $val.finalizers -}}
-#    - {{ . }}
-#    {{- end }}{{- end }}
+{{- if or $val.finalizers }}
+  finalizers:
+    {{ range $val.finalizers -}}
+    - {{ . }}
+    {{- end }}{{- end }}
+
 {{- if or $val.annotations $.Values.default.app.annotations }}
 {{- $appAnnotations := $val.annotations }}
 {{- $defaultAnnotations := $.Values.default.app.annotations }}
