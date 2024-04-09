@@ -3,6 +3,18 @@ kind: ControllerConfig
 metadata:
   name: vault-config
 spec:
+  volumeMounts:
+  - name: ca-bundle
+    readOnly: true
+    mountPath: /etc/ssl/certs
+  volumes:
+    - name: ca-bundle
+      secret:
+        secretName: ca-bundle
+        items:
+          - key: ca-bundle
+            path: ca-bundle.pem
+        defaultMode: 420
   args:
     - --enable-external-secret-stores
     - -d
