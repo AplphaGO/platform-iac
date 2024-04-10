@@ -44,8 +44,6 @@ metadata:
   name: {{ .Values.cluster_name }}-route-private
 spec:
   forProvider:
-    tags:
-      name: {{ .Values.cluster_name }}-private
     destinationCidrBlock: 0.0.0.0/0
     gatewayIdRef:
       name: {{ .Values.cluster_name }}-nat-gateway

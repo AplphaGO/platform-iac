@@ -44,8 +44,6 @@ metadata:
   name: {{ .Values.cluster_name }}-route-public
 spec:
   forProvider:
-    tags:
-      Name: {{ .Values.cluster_name }}-public
     destinationCidrBlock: 0.0.0.0/0
     gatewayIdRef:
       name: {{ .Values.cluster_name }}-internetgateway
