@@ -45,7 +45,7 @@ metadata:
 spec:
   forProvider:
     destinationCidrBlock: 0.0.0.0/0
-    natGatewayId:
+    natGatewayIdRef:
       name: {{ .Values.cluster_name }}-nat-gateway
     region: {{ .Values.region }}
     routeTableIdRef:
