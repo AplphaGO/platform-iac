@@ -28,7 +28,9 @@ metadata:
   annotations:
     "redhat-cop.redhat.io/patch": |
       spec:
-        subnets: {{ (lookup "ec2.aws.upbound.io/v1beta1" "Subnet" "" "crossx-public-subnet").status.atProvider.id }}
+        subnets: 
+          - {{`{{ (lookup "ec2.aws.upbound.io/v1beta1" "Subnet" "" "crossx-public-subnet").status.atProvider.id }}`}}
+          - {{`{{ (lookup "ec2.aws.upbound.io/v1beta1" "Subnet" "" "crossx-private-subnet").status.atProvider.id }}`}}
   name: {{ .Values.cluster_name }}-control-plane
 spec:
   availabilityZones:
