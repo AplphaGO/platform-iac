@@ -1,4 +1,4 @@
-cluster_name: capi
+cluster_name: crossx
 rosa_openshift_version: "4.15"
 redhat_aws_id: "710019948333"
 
@@ -6,10 +6,11 @@ thumbprintList: 9e99a48a9960b14926bb7f3b02e22da2b0ab7280
 #https://oidc.op1.openshiftapps.com/2ag434nind6c19tid004jo232ehle0qb
 #https://oidc.op1.openshiftapps.com/{{ .Values.oidc_path }}
 oidc_path: 2ahdhncdtpn83rdog5qt4ffonogahp0d
-redhat_aws_account_id: "193467738258"  
+aws_account_id: "193467738258"  
 
 vpc_cidrBlock: "10.0.0.0/16"
 region: us-east-1
 availabilityZone: us-east-1a
 private_subnet_cidrBlock: "10.0.6.0/24"
+public_subnet_cidrBlock: "10.0.7.0/24"
 

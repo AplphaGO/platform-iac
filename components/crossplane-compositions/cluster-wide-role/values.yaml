@@ -1,8 +1,4 @@
-cluster_name: capi
-
-oidc_path: 2ag434nind6c19tid004jo232ehle0qb
-redhat_aws_account_id: "803220779864"         
-
+        
 roles:
   controller-manager:
      role_name: crossplane-kube-system-capi-controller-manager

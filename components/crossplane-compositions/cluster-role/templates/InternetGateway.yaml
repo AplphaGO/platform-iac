@@ -8,6 +8,8 @@ metadata:
   name: {{ .Values.cluster_name }}-internetgateway
 spec:
   forProvider:
+    tags:
+      Name: {{ .Values.cluster_name }}
     region: {{ .Values.region }}
     vpcIdSelector:
       matchLabels:

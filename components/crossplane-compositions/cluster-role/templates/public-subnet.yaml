@@ -4,14 +4,14 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "5"
   labels:
-    crossplane/subnet: {{ .Values.cluster_name }}-private-subnet
-  name: {{ .Values.cluster_name }}-private-subnet
+    crossplane/subnet: {{ .Values.cluster_name }}-public-subnet
+  name: {{ .Values.cluster_name }}-public-subnet
 spec:
   forProvider:
     tags:
-      Name: {{ .Values.cluster_name }}-private
+      Name: {{ .Values.cluster_name }}-public
     availabilityZone: {{ .Values.availabilityZone }}
-    cidrBlock: {{ .Values.private_subnet_cidrBlock }}
+    cidrBlock: {{ .Values.public_subnet_cidrBlock }}
     region: {{ .Values.region }}
     vpcIdSelector:
       matchLabels:

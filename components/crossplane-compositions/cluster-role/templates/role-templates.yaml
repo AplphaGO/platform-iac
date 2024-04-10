@@ -1,5 +1,6 @@
 {{- $oidcPath := .Values.oidc_path }}
-{{- $redhatAwsAccountId := .Values.redhat_aws_account_id }}
+{{- $awsAccountId := .Values.aws_account_id }}
+{{- $clusterName := .Values.cluster_name }}
 
 {{- range $key,$val := .Values.roles }}
 ---
@@ -8,7 +9,7 @@ kind: Role
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "6"
-  name:  {{ $val.role_name }}
+  name:  {{ $clusterName }}-{{ $val.role_name }}
 spec:
   forProvider:
     managedPolicyArns:
@@ -36,7 +37,7 @@ spec:
               }
             },
             "Principal": {
-              "Federated": "arn:aws:iam::{{ $redhatAwsAccountId }}:oidc-provider/oidc.op1.openshiftapps.com/{{ $oidcPath }}"
+              "Federated": "arn:aws:iam::{{ $awsAccountId }}:oidc-provider/oidc.op1.openshiftapps.com/{{ $oidcPath }}"
             }
           }
         ]
