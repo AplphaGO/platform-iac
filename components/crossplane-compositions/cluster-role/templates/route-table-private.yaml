@@ -26,8 +26,6 @@ metadata:
   name: {{ .Values.cluster_name }}-routetableassociation-private
 spec:
   forProvider:
-    tags:
-      name: {{ .Values.cluster_name }}-private
     region: {{ .Values.region }}
     routeTableIdRef:
       name: {{ .Values.cluster_name }}-routetable-private
