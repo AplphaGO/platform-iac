@@ -1,5 +1,5 @@
 cluster_name: crossx
-rosa_openshift_version: "4.15"
+rosa_openshift_version: "4.15.6"
 redhat_aws_id: "710019948333"
 
 thumbprintList: 9e99a48a9960b14926bb7f3b02e22da2b0ab7280
