@@ -1,8 +1,8 @@
 roles:
   controller-manager:
-     role_name: kube-system-capi-controller-manager
+     role_name: kube-system-capa-controller-manager
      managedPolicyArns: arn:aws:iam::aws:policy/service-role/ROSANodePoolManagementPolicy
-     operator_name: capi-controller-manager
+     operator_name: capa-controller-manager
      operator_namespace: kube-system  
   
   control-plane-operator:
