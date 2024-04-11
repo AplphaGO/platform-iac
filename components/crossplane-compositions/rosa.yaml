@@ -1,0 +1,56 @@
+---
+# Source: rosa/templates/rosa-hcp.yaml
+apiVersion: cluster.x-k8s.io/v1beta1
+kind: Cluster
+metadata:
+  name: crossx
+spec:
+  clusterNetwork:
+    pods:
+      cidrBlocks:
+      - 192.168.0.0/16
+  controlPlaneRef:
+    apiVersion: controlplane.cluster.x-k8s.io/v1beta2
+    kind: ROSAControlPlane
+    name: crossx-control-plane
+  infrastructureRef:
+    apiVersion: infrastructure.cluster.x-k8s.io/v1beta2
+    kind: ROSACluster
+    name: crossx
+---
+# Source: rosa/templates/rosa-hcp.yaml
+apiVersion: infrastructure.cluster.x-k8s.io/v1beta2
+kind: ROSACluster
+metadata:
+  name: crossx
+spec: {}
+---
+# Source: rosa/templates/rosa-hcp.yaml
+apiVersion: controlplane.cluster.x-k8s.io/v1beta2
+kind: ROSAControlPlane
+metadata:
+  name: crossx-control-plane
+spec:
+  availabilityZones:
+  - us-east-1a
+  installerRoleARN: arn:aws:iam::486432305052:role/managedopenshift-hcp-rosa-installer-role
+  network:
+    machineCIDR: 10.0.0.0/16
+  oidcID: 2ahdhncdtpn83rdog5qt4ffonogahp0d
+  region: us-east-1
+  rolesRef:
+    controlPlaneOperatorARN: arn:aws:iam::486432305052:role/crossx-kube-system-control-plane-operator
+    imageRegistryARN: arn:aws:iam::486432305052:role/crossx-openshift-image-registry-installer-cloud-credentials
+    ingressARN: arn:aws:iam::486432305052:role/crossx-openshift-ingress-operator-cloud-credentials
+    kmsProviderARN: arn:aws:iam::486432305052:role/crossx-kube-system-kms-provider
+    kubeCloudControllerARN: arn:aws:iam::486432305052:role/crossx-kube-system-kube-controller-manager
+    networkARN: arn:aws:iam::486432305052:role/crossx-openshift-cloud-network-config-controller-cloud-crede
+    nodePoolManagementARN: arn:aws:iam::486432305052:role/crossx-kube-system-capa-controller-manager
+    storageARN: arn:aws:iam::486432305052:role/crossx-openshift-cluster-csi-drivers-ebs-cloud-credentials
+  rosaClusterName: crossx
+  subnets:
+     - << subnet-public-id >>
+     - << subnet-private-id >>
+  supportRoleARN: arn:aws:iam::486432305052:role/managedopenshift-hcp-rosa-support-role
+  version: "4.15.6"
+  workerRoleARN: arn:aws:iam::486432305052:role/managedopenshift-hcp-rosa-worker-role
