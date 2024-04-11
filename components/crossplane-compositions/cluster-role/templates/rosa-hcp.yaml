@@ -25,12 +25,6 @@ spec: {}
 apiVersion: controlplane.cluster.x-k8s.io/v1beta2
 kind: ROSAControlPlane
 metadata:
-  annotations:
-    "redhat-cop.redhat.io/patch": |
-      spec:
-        subnets: 
-          - {{`{{ (lookup "ec2.aws.upbound.io/v1beta1" "Subnet" "" "crossx-public-subnet").status.atProvider.id }}`}}
-          - {{`{{ (lookup "ec2.aws.upbound.io/v1beta1" "Subnet" "" "crossx-private-subnet").status.atProvider.id }}`}}
   name: {{ .Values.cluster_name }}-control-plane
 spec:
   availabilityZones:
@@ -51,8 +45,8 @@ spec:
     storageARN: arn:aws:iam::{{ .Values.aws_account_id  }}:role/{{ .Values.cluster_name }}-openshift-cluster-csi-drivers-ebs-cloud-credentials
   rosaClusterName: {{ .Values.cluster_name }}
   subnets:
-  - <<subnet-private-id>>   
-  - <<subnet-public-id>>   
+     - << subnet-public-id >>
+     - << subnet-private-id >>
   supportRoleARN: arn:aws:iam::{{ .Values.aws_account_id  }}:role/managedopenshift-hcp-rosa-support-role
   version: "{{ .Values.rosa_openshift_version }}"
   workerRoleARN: arn:aws:iam::{{ .Values.aws_account_id  }}:role/managedopenshift-hcp-rosa-worker-role
